@@ -3,7 +3,7 @@ import Logo from "../../assets/logo.svg"
 
 const Navbar = () => {
   return (
-	<nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+	<nav class="flex items-center justify-between p-6 lg:px-8 " aria-label="Global">
 	<div class="flex lg:flex-1">
 	  <a href="#" class="-m-1.5 p-1.5">
 		<span class="sr-only">Your Company</span>
@@ -19,10 +19,10 @@ const Navbar = () => {
 	  </button>
 	</div>
 	<div class="hidden lg:flex lg:gap-x-12">
-	  <a href="#" class="text-sm/6 font-semibold text-gray-900">Home</a>
-	  <a href="#" class="text-sm/6 font-semibold text-gray-900">Winners</a>
-	  <a href="#" class="text-sm/6 font-semibold text-gray-900">Theaters</a>
-	  <a href="#" class="text-sm/6 font-semibold text-gray-900">Contact Us</a>
+	  <a href="#" class="text-[16px] font-semibold text-gray-900 hover:font-bold cursor-pointer">Home</a>
+	  <a href="#" class="text-[16px] font-semibold text-gray-900 hover:font-bold cursor-pointer">Winners</a>
+	  <a href="#" class="text-[16px] font-semibold text-gray-900 hover:font-bold cursor-pointer">Theaters</a>
+	  <a href="#" class="text-[16px] font-semibold text-gray-900 hover:font-bold cursor-pointer">Contact Us</a>
 	</div>
 	<div class="hidden lg:flex lg:flex-1 lg:justify-end">
 	  {/* <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a> */}
