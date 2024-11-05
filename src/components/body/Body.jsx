@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Winners() {
+function Body() {
   return (
     <div>
-      
+      Body
     </div>
   )
 }
 
-export default Winners
+export default Body
