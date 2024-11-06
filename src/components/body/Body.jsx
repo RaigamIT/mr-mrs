@@ -18,10 +18,10 @@ function Body() {
         
       >
         <div>
-          <img src={MrMrs} className="object-cover opacity-90" alt="Movie Scene 1" />
+          <img src={MrMrs} className="object-cover  opacity-90" alt="Movie Scene 1"  />
         </div>
         <div>
-          <img src={Image2} className="object-cover opacity-90" alt="Movie Scene 2" />
+          <img src={MrMrs} className="object-cover opacity-90" alt="Movie Scene 2" />
         </div>
         
       </Carousel>
