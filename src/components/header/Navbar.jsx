@@ -5,13 +5,13 @@ import Logo from "../../assets/logo.svg";
 const Navbar = () => {
   return (
     <div className='mb-5'>
-      <nav className=" lg:gap-x-12 fixed flex w-full justify-center  top-0 left-0 z-10 bg-black opacity-70" aria-label="Global">
-        <div className="">
+      <nav className="lg:gap-x-12 fixed flex w-full justify-center top-0 left-0 z-10 bg-black" aria-label="Global">
+        <div className="logo-container"> {/* Custom class for logo opacity */}
           <Link to="/" className="-m-1.5 p-1.5">
-            <img className="z-20 hover:scale-110 transition-all duration-200 ease-in-out" src={Logo} alt="mr&mrs logo" width='100px' height='50px' />
+            <img className="hover:scale-110 transition-all duration-200 ease-in-out" src={Logo} alt="mr&mrs logo" width='100px' height='50px' />
           </Link>
         </div>
-        <div className=" lg:hidden">
+        <div className="lg:hidden">
           <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
             <span className="sr-only">Open main menu</span>
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
@@ -26,7 +26,6 @@ const Navbar = () => {
           <Link to="/aboutus" className="text-[20px] font-semibold text-white hover:font-bold hover:text-yellow-400 transition-all duration-200 ease-in-out cursor-pointer">Team</Link>
           <Link to="/contact" className="text-[20px] font-semibold text-white hover:font-bold hover:text-yellow-400 transition-all duration-200 ease-in-out cursor-pointer">Contact Us</Link>
         </div>
-
       </nav>
     </div>
   );
