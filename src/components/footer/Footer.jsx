@@ -9,7 +9,7 @@ const Footer = () => {
 
         <section class="bg-white ">
             <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
-                <nav class="flex flex-wrap justify-center -mx-5 -my-2">
+                {/* <nav class="flex flex-wrap justify-center -mx-5 -my-2">
                     <div class="px-5 py-2">
                         <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
                             About
@@ -31,17 +31,17 @@ const Footer = () => {
                             Terms
                         </a>
                     </div>
-                </nav>
+                </nav> */}
                 <div class="flex justify-center mt-8 space-x-6">
-                    <a href="https://web.facebook.com/mrmisiss" class="text-gray-400 hover:text-gray-500">
+                    <a href="https://web.facebook.com/mrmisiss" class="text-black hover:text-gray-500">
                         <span class="sr-only">Facebook</span>
                         <FaFacebookF/>
                     </a>
-                    <a href="https://www.tiktok.com/@mr.misis?is_from_webapp=1&sender_device=pc" class="text-gray-400 hover:text-gray-500">
+                    <a href="https://www.tiktok.com/@mr.misis?is_from_webapp=1&sender_device=pc" class="text-black hover:text-gray-500">
                         <span class="sr-only">Tiktok</span>
                         <SiTiktok/>
                     </a>
-                    <a href="https://youtube.com/@mrmisiss?si=LQNPQFPXckN7fiip" class="text-gray-400 hover:text-gray-500">
+                    <a href="https://youtube.com/@mrmisiss?si=LQNPQFPXckN7fiip" class="text-black hover:text-gray-500">
                         <span class="sr-only">Tiktok</span>
                         <IoLogoYoutube/>
                     </a>
