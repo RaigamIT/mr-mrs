@@ -1,7 +1,7 @@
 import React from 'react';
-import Charith from "../../assets/Cast/charith.png";
-import Ravi from "../../assets/Cast/chairman.png";
-import Giriraj from "../../assets/Cast/giriraj.png";
+import Charith from "../../assets/Cast/Charith.png";
+import Ravi from "../../assets/Cast/Chairman.png";
+import Giriraj from "../../assets/Cast/Giriraj.png";
 
 export default function MainCrew() {
   return (
@@ -17,7 +17,7 @@ export default function MainCrew() {
 
           <div className="flex justify-center mt-10">
             <div className="border rounded-md overflow-hidden max-w-[200px] mb-10">
-              <img src={Ravi} className="w-60 h-60 object-cover bg-gray-200" />
+              <img src={Ravi} className=" w-60 h-60 object-cover bg-gray-200" />
               <div className="py-4">
                 <h4 className="text-gray-800 text-base font-bold">ආචාර්ය රවී ලියනගේ</h4>
               </div>

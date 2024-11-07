@@ -39,16 +39,16 @@ export default function Counter() {
       </div>
       <div className="flex  items-center mt-10 mb-10 justify-center w-full gap-1.5 count-down-main">
         <div className="timer">
-          <div className="rounded-xl bg-gradient-to-b bg-[#FCB81F] to-purple-600 py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 aspect-square px-3">
-            <h3 className="countdown-element days font-serif font-semibold text-2xl text-white text-center">
+          <div className="rounded-xl shadow-lg bg-gradient-to-b bg-[#FCB81F] to-purple-600 py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 aspect-square px-3">
+            <h3 className="countdown-element days font-serif font-semibold text-2xl text-black text-center">
               {timeLeft.days}
             </h3>
-            <p className="text-lg font-serif font-normal text-white mt-1 text-center w-full">Days</p>
+            <p className="text-lg font-serif font-normal text-black mt-1 text-center w-full">Days</p>
           </div>
         </div>
         <h3 className="font-serif font-semibold text-2xl text-gray-900">:</h3>
         <div className="timer">
-          <div className="rounded-xl bg-gradient-to-b bg-[#0094F9] to-purple-600 py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 aspect-square px-3">
+          <div className="rounded-xl shadow-lg bg-gradient-to-b bg-[#0094F9] to-purple-600 py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 aspect-square px-3">
             <h3 className="countdown-element hours font-serif font-semibold text-2xl text-white text-center">
               {timeLeft.hours}
             </h3>
@@ -57,16 +57,16 @@ export default function Counter() {
         </div>
         <h3 className="font-serif font-semibold text-2xl text-gray-900">:</h3>
         <div className="timer">
-          <div className="rounded-xl bg-gradient-to-b bg-[#FCB81F] to-purple-600 py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 aspect-square px-3">
-            <h3 className="countdown-element minutes font-serif font-semibold text-2xl text-white text-center">
+          <div className="rounded-xl shadow-lg bg-gradient-to-b bg-[#FCB81F] to-purple-600 py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 aspect-square px-3">
+            <h3 className="countdown-element minutes font-serif font-semibold text-2xl text-black text-center">
               {timeLeft.minutes}
             </h3>
-            <p className="text-lg font-serif font-normal text-white mt-1 text-center w-full">Minutes</p>
+            <p className="text-lg font-serif font-normal text-black mt-1 text-center w-full">Minutes</p>
           </div>
         </div>
         <h3 className="font-serif font-semibold text-2xl text-gray-900">:</h3>
         <div className="timer">
-          <div className="rounded-xl bg-gradient-to-b bg-[#0094F9] to-purple-600 py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 aspect-square px-3">
+          <div className="rounded-xl shadow-lg bg-gradient-to-b bg-[#0094F9] to-purple-600 py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 aspect-square px-3">
             <h3 className="countdown-element seconds font-serif font-semibold text-2xl text-white text-center">
               {timeLeft.seconds}
             </h3>

@@ -6,7 +6,7 @@ import MainCrew from "../components/crew/MainCrew"
 
 function AboutUs() {
   return (
-    <div className="">
+    <div className = "">
         <Navbar/>
         <MainCrew/>
         <Characters/>    
