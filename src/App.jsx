@@ -8,6 +8,7 @@ import ReactDOM from "react-dom/client";
 import Theaters from "./pages/Theaters";
 import Winners from "./pages/Winners";
 import AboutUs from './pages/AboutUs';
+import ReviewUs from './pages/ReviewUs';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="winners" element={< Winners/>} />
           <Route path="theaters" element={<Theaters />} />
           <Route path="aboutus" element={<AboutUs />} />
+          <Route path="reviewus" element={<ReviewUs />} />
       </Routes>
     </BrowserRouter>
   );
