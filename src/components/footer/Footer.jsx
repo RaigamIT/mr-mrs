@@ -7,8 +7,8 @@ import { IoLogoYoutube } from "react-icons/io5";
 const Footer = () => {
     return (
 
-        <section class="bg-white ">
-            <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+        <section class=" ">
+            <div class="max-w-screen-xl font-serif text-gray-600 px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
                 <div>
                     <p>Mr.මිසිස් in theaters nationwide from January #, 2025</p>
                     <p>Directed by: Charith Abeysinghe</p>
@@ -33,7 +33,7 @@ const Footer = () => {
 
                 </div>
                 <p class="mt-8 text-base leading-6 text-center text-gray-400">
-                    © 2024 Raigam IT Department, Inc. All rights reserved.
+                    © 2024 Raigam IT Department, All rights reserved.
                 </p>
             </div>
 
