@@ -6,12 +6,12 @@ import MainCrew from "../components/crew/MainCrew"
 
 function AboutUs() {
   return (
-    <div className="">
+    < >
         <Navbar/>
         <MainCrew/>
         <Characters/>    
         <Footer/>
-    </div>
+    </>
   )
 }
 
