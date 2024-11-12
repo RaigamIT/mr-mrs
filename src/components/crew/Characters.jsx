@@ -24,7 +24,7 @@ function Cast() {
               <h3 class="mb-1 text-2 font-bold tracking-tight text-gray-900 ">
                   <a href="#">දිනක්ෂි ප්‍රියසාද්</a>
               </h3>
-              {/* <p>අංජලී</p> */}
+              
            
           </div>
           <div class="text-center text-gray-500">
@@ -32,7 +32,7 @@ function Cast() {
               <h3 class="mb-1 text-2 font-bold tracking-tight text-gray-900">
                   <a href="#">උද්දික ප්‍රේමරත්න</a>
               </h3>
-              {/* <p>අනුෂ්ක</p> */}
+              
  
           </div>
           <div class="text-center text-gray-500 ">
@@ -40,14 +40,14 @@ function Cast() {
               <h3 class="mb-1 text-2 font-bold tracking-tight text-gray-900 ">
                   <a href="#">පහන්දි නෙතාරා</a>
               </h3>
-              {/* <p>දියණිය </p> */}
+              
           </div>
           <div class="text-center text-gray-500">
               <img class="mx-auto bg-gray-200 mb-4 w-36 h-36 rounded-full" src={Mahendra} alt="Jese Avatar"/>
               <h3 class="mb-1 text-2 font-bold tracking-tight text-gray-900 ">
                   <a href="#">මහේන්ද්‍ර පෙරේරා</a>
               </h3>
-              {/* <p>අංජලීගේ පියා</p> */}
+              
        
           </div>
           <div class="text-center text-gray-500 ">
@@ -55,7 +55,7 @@ function Cast() {
               <h3 class="mb-1 text-2 font-bold tracking-tight text-gray-900">
                   <a href="#">සරත් කොතලාවල </a>
               </h3>
-              {/* <p>ගෙවල් අයිතිකරු</p> */}
+              
             
           </div>
           <div class="text-center text-gray-500 ">
@@ -63,21 +63,21 @@ function Cast() {
               <h3 class="mb-1 text-2 font-bold tracking-tight text-gray-900 ">
                   <a href="#">මිහිර සිරිතිලක</a>
               </h3>
-              {/* <p>කනේමල්</p> */}
+              
           </div>
           <div class="text-center text-gray-500">
               <img class="bg-gray-200 mx-auto mb-4 w-36 h-36 rounded-full" src={Piyumi} alt="Sofia Avatar"/>
               <h3 class="mb-1 text-2 font-bold tracking-tight text-gray-900">
                   <a href="#">පියුමි බොතේජු</a>
               </h3>
-              {/* <p>යසවතී</p> */}
+            
           </div>
           <div class="text-center text-gray-500 ">
               <img class="bg-gray-200 mx-auto mb-4 w-36 h-36 rounded-full" src={Saman} alt="Sofia Avatar"/>
               <h3 class="mb-1 text-2 font-bold tracking-tight text-gray-900 ">
                   <a href="#">සමන් හේමරත්න</a>
               </h3>
-              {/* <p>බායි</p> */}
+              
           </div>
           
 
