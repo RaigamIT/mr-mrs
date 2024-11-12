@@ -33,11 +33,11 @@ export default function Counter() {
   }, []);
 
   return (
-    <div>
+    <div className=' justify-items-center'>
       <div>
       <h1 className='mt-10 font-semibold font-serif text-black-700 text-[30px]'>Premier in</h1>
       </div>
-      <div className="flex  items-center mt-10 mb-10 justify-center w-full gap-1.5 count-down-main">
+      <div className="flex items-center mt-10 mb-10 justify-center w-full gap-1.5 count-down-main">
         <div className="timer">
           <div className="rounded-xl shadow-lg bg-gradient-to-b bg-[#FCB81F] to-purple-600 py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 aspect-square px-3">
             <h3 className="countdown-element days font-serif font-semibold text-2xl text-black text-center">
