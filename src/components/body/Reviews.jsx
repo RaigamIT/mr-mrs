@@ -208,10 +208,10 @@ function Reviews() {
                                 <div class="col-span-12 md:col-span-4 max-lg:mt-8 md:pl-8">
                                     <div class="flex items-center flex-col justify-center w-full h-full ">
                                         <button onClick={handleClick}
-                                            class="rounded-full px-6 py-4 font-serif bg-[#0094F9] font-semibold text-lg text-white whitespace-nowrap mb-6 w-full text-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-[#383bff] hover:shadow-[#7db4d9]">Write
+                                            class="rounded-full px-6 py-4 font-serif bg-[#0094F9] font-semibold text-lg text-white whitespace-nowrap mb-6 w-full text-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-[#FCB81F] hover:text-black hover:shadow-lg">Write
                                             A Review</button>
                                         <button onClick={navToView}
-                                            class="rounded-full font-serif px-6 py-4 bg-white font-semibold text-lg text-[#0094F9] whitespace-nowrap w-full text-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">See
+                                            class="rounded-full font-serif px-6 py-4 bg-white font-semibold text-lg text-[#0094F9] whitespace-nowrap w-full text-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-[#FCB81F] hover:text-black">See
                                             All Reviews</button>
                                     </div>
                                 </div>

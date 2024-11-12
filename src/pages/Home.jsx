@@ -6,6 +6,7 @@ import Trailer from '../components/body/Trailer'
 import Counter from '../components/body/Counter'
 // import ReviewButton from '../components/body/ReviewButton'
 import Reviews from '../components/body/Reviews'
+import BackToTop from '../components/body/BackToTop'
 
 
 function Home() {
@@ -27,6 +28,8 @@ function Home() {
           <Trailer/>
 
           <Reviews/>
+
+          <BackToTop/>
 
        
 
