@@ -10,11 +10,11 @@ export default function Districts() {
         {DistrictList.map((district, index) => (
           <button
             key={index}
-            className="bg-blue-500 text-white py-3 px-5 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105"
+            className="bg-[#0094F9] text-gray-300 font-bold py-3 px-5 rounded-lg shadow-md hover:bg-[#FCB81F] hover:text-black transition duration-300 ease-in-out transform hover:scale-105"
           >
-            <div className="text-center">
+            <div onClick={district.id} className="text-center">
               <p className="font-bold">{district.english}</p>
-              <p onClick={district.id} className="text-sm text-gray-300">{district.sinhala}</p>
+              <p className="text-sm ">{district.sinhala}</p>
             </div>
           </button>
         ))}
