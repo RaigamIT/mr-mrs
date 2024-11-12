@@ -17,7 +17,7 @@ function Body() {
         transitionTime={800}
         
       >
-        <div>
+        <div className=''>
           <img src={MrMrs} className="object-cover  opacity-90" alt="Movie Scene 1"  />
         </div>
         <div>

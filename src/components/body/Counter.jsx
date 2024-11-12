@@ -35,7 +35,7 @@ export default function Counter() {
   return (
     <div>
       <div>
-      <h1 className='mt-10 font-serif text-black-700 text-[30px]'>Premier in</h1>
+      <h1 className='mt-10 font-semibold font-serif text-black-700 text-[30px]'>Premier in</h1>
       </div>
       <div className="flex  items-center mt-10 mb-10 justify-center w-full gap-1.5 count-down-main">
         <div className="timer">
