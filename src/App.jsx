@@ -2,18 +2,33 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Navbar  from './components/header/Navbar';
-import Footer from './components/footer/Footer';
 import Home from './pages/Home';
+import ContactUs from './pages/ContactUs';
+import ReactDOM from "react-dom/client";
+import Theaters from "./pages/Theaters";
+import Winners from "./pages/Winners";
+import AboutUs from './pages/AboutUs';
+import ReviewUs from './pages/ReviewUs';
+import WriteReview from './pages/WriteReview';
+import ViewReview from './pages/ViewReview';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
 
+export default function App() {
   return (
-    <>
-      <Home/>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+          <Route index element={<Home />} />
+          <Route path="winners" element={< Winners/>} />
+          <Route path="theaters" element={<Theaters />} />
+          <Route path="aboutus" element={<AboutUs />} />
+          <Route path="reviewus" element={<ReviewUs />} />
+          <Route path="writereview" element={<WriteReview />} />
+          <Route path="viewreview" element={<ViewReview />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);

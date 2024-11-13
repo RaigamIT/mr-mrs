@@ -2,11 +2,16 @@ import React from 'react'
 import Navbar from '../components/header/Navbar'
 import Footer from '../components/footer/Footer'
 import Body from '../components/body/Body'
-import Trailer from '../components/trailer/Trailer'
+import Trailer from '../components/body/Trailer'
+import Counter from '../components/body/Counter'
+// import ReviewButton from '../components/body/ReviewButton'
+import Reviews from '../components/body/Reviews'
+import BackToTop from '../components/body/BackToTop'
+
 
 function Home() {
   return (
-    <div className='overflow-x-hidden '>
+    <div className='overflow-hidden w-full'>
 
         {/* Navbar */}
         <Navbar/>
@@ -15,8 +20,18 @@ function Home() {
           {/* Body */}
           <Body/>
 
+
+
+          <Counter/>
+
           {/* Trailer */}
           <Trailer/>
+
+          <Reviews/>
+
+          <BackToTop/>
+
+       
 
           {/* Footer */}
           <Footer/>

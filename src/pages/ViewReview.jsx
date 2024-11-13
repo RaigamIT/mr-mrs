@@ -1,17 +1,21 @@
 import React from 'react'
 import Navbar from '../components/header/Navbar'
+import ReviewList from '../components/body/ReviewList'
 import Footer from '../components/footer/Footer'
-import District from '../components/theater/Districts'
 
-function Theaters() {
+function ViewReview() {
   return (
     <div>
-      <Navbar/>
-      <District/>
-      <Footer/>
+
+        <Navbar/>
+
+        <ReviewList/>
+
+        <Footer/>
+
       
     </div>
   )
 }
 
-export default Theaters
+export default ViewReview
