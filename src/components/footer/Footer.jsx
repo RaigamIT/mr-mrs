@@ -10,7 +10,7 @@ const Footer = () => {
         <section class=" ">
             <div class="max-w-screen-xl font-serif text-gray-600 px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
                 <div>
-                    <p>Mr.මිසිස් in theaters nationwide from January #, 2025</p>
+                    <p>Mr.මිසිස් in theaters nationwide from January 16, 2025</p>
                     <p>Directed by: Charith Abeysinghe</p>
                     <p>Produced by: Dr. Ravi Liyanage</p>
 
