@@ -37,7 +37,7 @@ export default function MainCrew() {
           <motion.div 
             initial="initial"
             animate="animate"
-            transition={{ staggerChildren: 0.1 }}
+            transition={{ staggerChildren: 0.5}}
             className="flex flex-wrap justify-center gap-x-20 w-full mt-12"
           >
             {[{ img: Charith, name: 'චරිත් අබේසිංහ', role: 'අධ්‍යක්ෂණය' }, { img: Giriraj, name: 'ගිරිරාජ් කෞශල්‍ය', role: 'තිර රචනය' }].map((crew, index) => (
