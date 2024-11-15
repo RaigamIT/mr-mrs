@@ -39,7 +39,7 @@ function Reviews() {
                                         </defs>
                                     </svg>
                                     <p class="h-2 w-full sm:min-w-[278px] rounded-[30px] bg-gray-200 ml-5 mr-3">
-                                        <span class="h-full w-[30%] rounded-[30px] bg-[#0094F9] flex"></span>
+                                        <span class="h-full w-[30%] rounded-[30px] bg-[#004A8F] flex"></span>
                                     </p>
                                     <p class="font-medium text-lg py-[1px] text-black mr-[2px]">30</p>
                                 </div>
@@ -59,7 +59,7 @@ function Reviews() {
                                         </defs>
                                     </svg>
                                     <p class="h-2 w-full xl:min-w-[278px] rounded-[30px] bg-gray-200 ml-5 mr-3">
-                                        <span class="h-full w-[40%] rounded-[30px] bg-[#0094F9] flex"></span>
+                                        <span class="h-full w-[40%] rounded-[30px] bg-[#004A8F] flex"></span>
                                     </p>
                                     <p class="font-medium text-lg py-[1px] text-black mr-[2px]">40</p>
                                 </div>
@@ -79,7 +79,7 @@ function Reviews() {
                                         </defs>
                                     </svg>
                                     <p class="h-2 w-full xl:min-w-[278px] rounded-[30px] bg-gray-200 ml-5 mr-3">
-                                        <span class="h-full w-[20%] rounded-[30px] bg-[#0094F9] flex"></span>
+                                        <span class="h-full w-[20%] rounded-[30px] bg-[#004A8F] flex"></span>
                                     </p>
                                     <p class="font-medium text-lg py-[1px] text-black mr-[2px]">20</p>
                                 </div>
@@ -99,7 +99,7 @@ function Reviews() {
                                         </defs>
                                     </svg>
                                     <p class="h-2 w-full xl:min-w-[278px] rounded-[30px] bg-gray-200 ml-5 mr-3">
-                                        <span class="h-full w-[16%] rounded-[30px] bg-[#0094F9] flex"></span>
+                                        <span class="h-full w-[16%] rounded-[30px] bg-[#004A8F] flex"></span>
                                     </p>
                                     <p class="font-medium text-lg py-[1px] text-black mr-[2px]">16</p>
                                 </div>
@@ -119,7 +119,7 @@ function Reviews() {
                                         </defs>
                                     </svg>
                                     <p class="h-2 w-full xl:min-w-[278px] rounded-[30px] bg-gray-200 ml-5 mr-3">
-                                        <span class="h-full w-[8%] rounded-[30px] bg-[#0094F9] flex"></span>
+                                        <span class="h-full w-[8%] rounded-[30px] bg-[#004A8F] flex"></span>
                                     </p>
                                     <p class="font-medium text-lg py-[1px] text-black mr-[2px]">8</p>
                                 </div>
@@ -208,10 +208,10 @@ function Reviews() {
                                 <div class="col-span-12 md:col-span-4 max-lg:mt-8 md:pl-8">
                                     <div class="flex items-center flex-col justify-center w-full h-full ">
                                         <button onClick={handleClick}
-                                            class="rounded-full px-6 py-4 font-serif bg-[#0094F9] font-semibold text-lg text-white whitespace-nowrap mb-6 w-full text-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-[#FCB81F] hover:text-black hover:shadow-lg">Write
+                                            class="rounded-full px-6 py-4 font-serif bg-[#004A8F] font-semibold text-lg text-white whitespace-nowrap mb-6 w-full text-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-[#FCB81F] hover:text-black hover:shadow-lg">Write
                                             A Review</button>
                                         <button onClick={navToView}
-                                            class="rounded-full font-serif px-6 py-4 bg-white font-semibold text-lg text-[#0094F9] whitespace-nowrap w-full text-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-[#FCB81F] hover:text-black">See
+                                            class="rounded-full font-serif px-6 py-4 bg-white font-semibold text-lg text-[#004A8F] whitespace-nowrap w-full text-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-[#FCB81F] hover:text-black">See
                                             All Reviews</button>
                                     </div>
                                 </div>

@@ -9,7 +9,7 @@ export default function Counter() {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2025-01-15T23:59:59'); // Set your target date here
+    const targetDate = new Date('2025-01-16T23:59:59'); // Set your target date here
 
     const updateCountdown = () => {
       const now = new Date();
@@ -48,7 +48,7 @@ export default function Counter() {
         </div>
         <h3 className="font-serif font-semibold text-2xl text-gray-900">:</h3>
         <div className="timer">
-          <div className="rounded-xl shadow-lg bg-gradient-to-b bg-[#0094F9] to-purple-600 py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 aspect-square px-3">
+          <div className="rounded-xl shadow-lg bg-gradient-to-b bg-[#004A8F] to-purple-600 py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 aspect-square px-3">
             <h3 className="countdown-element hours font-serif font-semibold text-2xl text-white text-center">
               {timeLeft.hours}
             </h3>
@@ -66,7 +66,7 @@ export default function Counter() {
         </div>
         <h3 className="font-serif font-semibold text-2xl text-gray-900">:</h3>
         <div className="timer">
-          <div className="rounded-xl shadow-lg bg-gradient-to-b bg-[#0094F9] to-purple-600 py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 aspect-square px-3">
+          <div className="rounded-xl shadow-lg bg-gradient-to-b bg-[#004A8F] to-purple-600 py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 aspect-square px-3">
             <h3 className="countdown-element seconds font-serif font-semibold text-2xl text-white text-center">
               {timeLeft.seconds}
             </h3>
