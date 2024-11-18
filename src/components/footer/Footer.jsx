@@ -7,7 +7,7 @@ import { IoLogoYoutube } from "react-icons/io5";
 const Footer = () => {
     return (
 
-        <section class=" ">
+        <section class="mt-10">
             <div class="max-w-screen-xl font-serif text-gray-600 px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
                 <div>
                     <p>Mr.මිසිස් in theaters nationwide from January 16, 2025</p>

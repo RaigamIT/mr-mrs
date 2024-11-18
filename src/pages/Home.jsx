@@ -11,7 +11,7 @@ import BackToTop from '../components/body/BackToTop'
 
 function Home() {
   return (
-    <div className='overflow-hidden w-full'>
+    <div className='bg-blue-500 overflow-hidden w-full'>
 
         {/* Navbar */}
         <Navbar/>
@@ -21,7 +21,7 @@ function Home() {
           <Body/>
 
 
-
+<h1>This website is under development!</h1>
           <Counter/>
 
           {/* Trailer */}
