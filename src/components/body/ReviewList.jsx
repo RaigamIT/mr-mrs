@@ -1,185 +1,141 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { database } from '../../../firebase.init';
+import { ref, onValue } from 'firebase/database';
 
 function ViewReview() {
-  return (
-    <div>
-                                                        <section class="py-24 relative">
-        <div class="w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto">
-            {/* <h2 class="font-manrope font-bold text-4xl text-black text-center mb-11">People Love Us</h2> */}
-            <div class="grid grid-cols-12 py-6 border-y border-gray-200 mb-11">
-                <div class="col-span-12 lg:col-span-10 ">
-                    <h5 class="font-manrope font-semibold text-2xl leading-9 text-black text-center">Reviews
-                        <span class="lg:hidden font-manrope font-semibold text-2xl leading-9 text-black text-center"> &
-                            Rating</span>
+    const [reviews, setReviews] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [expandedReviews, setExpandedReviews] = useState({});
+    const maxLength = 50;
+    const reviewsPerPage = 5;
+
+    const toggleText = (id) => {
+        setExpandedReviews((prev) => ({
+            ...prev,
+            [id]: !prev[id],
+        }));
+    };
+
+    useEffect(() => {
+        const reviewsRef = ref(database, 'reviews');
+        const unsubscribe = onValue(reviewsRef, (snapshot) => {
+            const data = snapshot.val();
+            if (data) {
+                const reviewsArray = Object.entries(data).map(([id, value]) => ({
+                    id,
+                    ...value,
+                }));
+                setReviews(reviewsArray);
+            } else {
+                setReviews([]);
+            }
+        });
+        return () => unsubscribe();
+    }, []);
+
+    // Pagination logic
+    const indexOfLastReview = currentPage * reviewsPerPage;
+    const indexOfFirstReview = indexOfLastReview - reviewsPerPage;
+    const currentReviews = reviews.slice(indexOfFirstReview, indexOfLastReview);
+
+    // Handle page change
+    const totalPages = Math.ceil(reviews.length / reviewsPerPage);
+    const handlePrevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
+    const handleNextPage = () => setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+
+    const renderStars = (rating) => {
+        const stars = [];
+        for (let i = 1; i <= 5; i++) {
+            stars.push(
+                <svg
+                    key={i}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill={i <= rating ? '#FBBF24' : '#E5E7EB'}
+                >
+                    <path d="M12 .587l3.668 7.429L24 9.75l-6 5.84 1.416 8.26L12 19.258l-7.416 4.592L6 15.59 0 9.75l8.332-1.734L12 .587z" />
+                </svg>
+            );
+        }
+        return stars;
+    };
+
+    return (
+        <div className="flex flex-col items-center justify-center min-h-screen">
+            <section className="py-12 w-full max-w-7xl px-4 md:px-5 mx-auto">
+                <div className="py-6 mt-10 border-y border-gray-200 mb-11">
+                    <h5 className="font-manrope font-semibold text-2xl leading-9 text-black text-center">
+                        Reviews & Ratings
                     </h5>
                 </div>
-                <div class="col-span-12 lg:col-span-2 max-lg:hidden">
-                    <h5 class="font-manrope font-semibold text-2xl leading-9 text-black text-center">Rating</h5>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 gap-8">
 
-                <div class="grid grid-cols-12 max-w-sm sm:max-w-full mx-auto">
-                    <div class="col-span-12 lg:col-span-10 ">
-                        <div class="sm:flex gap-6">
-                            <div class="text">
-                                <p class="font-medium text-lg leading-8 text-gray-900 mb-2">Robert Karmazov</p>
-                                <div class="flex lg:hidden items-center gap-2 lg:justify-between w-full mb-5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
-                                        fill="none">
-                                        <g clip-path="url(#clip0_13624_2090)">
-                                            <path
-                                                d="M14.1033 2.56698C14.4701 1.82374 15.5299 1.82374 15.8967 2.56699L19.1757 9.21093C19.3214 9.50607 19.6029 9.71064 19.9287 9.75797L27.2607 10.8234C28.0809 10.9426 28.4084 11.9505 27.8149 12.5291L22.5094 17.7007C22.2737 17.9304 22.1662 18.2614 22.2218 18.5858L23.4743 25.8882C23.6144 26.7051 22.7569 27.3281 22.0233 26.9424L15.4653 23.4946C15.174 23.3415 14.826 23.3415 14.5347 23.4946L7.9767 26.9424C7.24307 27.3281 6.38563 26.7051 6.52574 25.8882L7.7782 18.5858C7.83384 18.2614 7.72629 17.9304 7.49061 17.7007L2.1851 12.5291C1.59159 11.9505 1.91909 10.9426 2.73931 10.8234L10.0713 9.75797C10.3971 9.71064 10.6786 9.50607 10.8243 9.21093L14.1033 2.56698Z"
-                                                fill="#FBBF24" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_13624_2090">
-                                                <rect width="30" height="30" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
-                                        fill="none">
-                                        <g clip-path="url(#clip0_13624_2090)">
-                                            <path
-                                                d="M14.1033 2.56698C14.4701 1.82374 15.5299 1.82374 15.8967 2.56699L19.1757 9.21093C19.3214 9.50607 19.6029 9.71064 19.9287 9.75797L27.2607 10.8234C28.0809 10.9426 28.4084 11.9505 27.8149 12.5291L22.5094 17.7007C22.2737 17.9304 22.1662 18.2614 22.2218 18.5858L23.4743 25.8882C23.6144 26.7051 22.7569 27.3281 22.0233 26.9424L15.4653 23.4946C15.174 23.3415 14.826 23.3415 14.5347 23.4946L7.9767 26.9424C7.24307 27.3281 6.38563 26.7051 6.52574 25.8882L7.7782 18.5858C7.83384 18.2614 7.72629 17.9304 7.49061 17.7007L2.1851 12.5291C1.59159 11.9505 1.91909 10.9426 2.73931 10.8234L10.0713 9.75797C10.3971 9.71064 10.6786 9.50607 10.8243 9.21093L14.1033 2.56698Z"
-                                                fill="#FBBF24" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_13624_2090">
-                                                <rect width="30" height="30" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
-                                        fill="none">
-                                        <g clip-path="url(#clip0_13624_2090)">
-                                            <path
-                                                d="M14.1033 2.56698C14.4701 1.82374 15.5299 1.82374 15.8967 2.56699L19.1757 9.21093C19.3214 9.50607 19.6029 9.71064 19.9287 9.75797L27.2607 10.8234C28.0809 10.9426 28.4084 11.9505 27.8149 12.5291L22.5094 17.7007C22.2737 17.9304 22.1662 18.2614 22.2218 18.5858L23.4743 25.8882C23.6144 26.7051 22.7569 27.3281 22.0233 26.9424L15.4653 23.4946C15.174 23.3415 14.826 23.3415 14.5347 23.4946L7.9767 26.9424C7.24307 27.3281 6.38563 26.7051 6.52574 25.8882L7.7782 18.5858C7.83384 18.2614 7.72629 17.9304 7.49061 17.7007L2.1851 12.5291C1.59159 11.9505 1.91909 10.9426 2.73931 10.8234L10.0713 9.75797C10.3971 9.71064 10.6786 9.50607 10.8243 9.21093L14.1033 2.56698Z"
-                                                fill="#FBBF24" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_13624_2090">
-                                                <rect width="30" height="30" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
-                                        fill="none">
-                                        <g clip-path="url(#clip0_13624_2090)">
-                                            <path
-                                                d="M14.1033 2.56698C14.4701 1.82374 15.5299 1.82374 15.8967 2.56699L19.1757 9.21093C19.3214 9.50607 19.6029 9.71064 19.9287 9.75797L27.2607 10.8234C28.0809 10.9426 28.4084 11.9505 27.8149 12.5291L22.5094 17.7007C22.2737 17.9304 22.1662 18.2614 22.2218 18.5858L23.4743 25.8882C23.6144 26.7051 22.7569 27.3281 22.0233 26.9424L15.4653 23.4946C15.174 23.3415 14.826 23.3415 14.5347 23.4946L7.9767 26.9424C7.24307 27.3281 6.38563 26.7051 6.52574 25.8882L7.7782 18.5858C7.83384 18.2614 7.72629 17.9304 7.49061 17.7007L2.1851 12.5291C1.59159 11.9505 1.91909 10.9426 2.73931 10.8234L10.0713 9.75797C10.3971 9.71064 10.6786 9.50607 10.8243 9.21093L14.1033 2.56698Z"
-                                                fill="#FBBF24" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_13624_2090">
-                                                <rect width="30" height="30" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
-                                        fill="none">
-                                        <g clip-path="url(#clip0_13624_2090)">
-                                            <path
-                                                d="M14.1033 2.56698C14.4701 1.82374 15.5299 1.82374 15.8967 2.56699L19.1757 9.21093C19.3214 9.50607 19.6029 9.71064 19.9287 9.75797L27.2607 10.8234C28.0809 10.9426 28.4084 11.9505 27.8149 12.5291L22.5094 17.7007C22.2737 17.9304 22.1662 18.2614 22.2218 18.5858L23.4743 25.8882C23.6144 26.7051 22.7569 27.3281 22.0233 26.9424L15.4653 23.4946C15.174 23.3415 14.826 23.3415 14.5347 23.4946L7.9767 26.9424C7.24307 27.3281 6.38563 26.7051 6.52574 25.8882L7.7782 18.5858C7.83384 18.2614 7.72629 17.9304 7.49061 17.7007L2.1851 12.5291C1.59159 11.9505 1.91909 10.9426 2.73931 10.8234L10.0713 9.75797C10.3971 9.71064 10.6786 9.50607 10.8243 9.21093L14.1033 2.56698Z"
-                                                fill="#FBBF24" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_13624_2090">
-                                                <rect width="30" height="30" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                <p class="font-normal text-base leading-7 text-gray-400 mb-4 lg:pr-8">One of the standout features of Pagedone is its intuitive and user-friendly interface. Navigating through the system feels natural, and the layout makes it easy to locate and utilize various design elements. This is particularly beneficial for designers looking to streamline their workflow.  </p>
-                                <div class="flex items-center justify-between">
-                                    <p
-                                        class="lg:hidden font-medium text-sm leading-7 text-gray-400 lg:text-center whitespace-nowrap">
-                                        Nov 01, 2023</p>
-                                </div>
+                {/* Reviews */}
+                <div className="grid w-full grid-cols-1 gap-8 justify-items-center">
+                    {currentReviews.map((review) => {
+                        const formattedDate = new Date(review.timestamp).toLocaleDateString();
+                        const isTextLong = review.reviewText.length > maxLength;
+
+                        return (
+                            <div
+                                key={review.id}
+                                className="w-full bg-white shadow-md rounded-lg p-6"
+                                style={{
+                                    overflowWrap: 'break-word',
+                                    wordBreak: 'break-word',
+                                }}
+                            >
+                                <p className="font-medium text-lg leading-8 text-gray-900 mb-2">{review.name}</p>
+
+                                <p
+                                    className="font-normal leading-7 text-gray-400 mb-4"
+                                    style={{
+                                        maxWidth: '100%',
+                                    }}
+                                >
+                                    {expandedReviews[review.id]
+                                        ? review.reviewText
+                                        : `${review.reviewText.slice(0, maxLength)}${isTextLong ? '...' : ''}`}
+                                    {isTextLong && (
+                                        <span
+                                            onClick={() => toggleText(review.id)}
+                                            className="text-blue-500 cursor-pointer hover:underline ml-2"
+                                        >
+                                            {expandedReviews[review.id] ? 'Show less' : 'Show more'}
+                                        </span>
+                                    )}
+                                </p>
+
+                                {/* Rating Stars */}
+                                <div className="flex justify-center gap-1 mb-4">{renderStars(review.rating)}</div>
+
+                                <p className="font-medium text-lg leading-8 text-gray-400 text-right">{formattedDate}</p>
                             </div>
-                        </div>
-                    </div>
-                    <div
-                        class="col-span-12 lg:col-span-2 max-lg:hidden flex lg:items-center flex-row lg:flex-col justify-center max-lg:pt-6 ">
-                        <div class="flex items-center gap-2 lg:justify-between w-full mb-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
-                                fill="none">
-                                <g clip-path="url(#clip0_13624_2090)">
-                                    <path
-                                        d="M14.1033 2.56698C14.4701 1.82374 15.5299 1.82374 15.8967 2.56699L19.1757 9.21093C19.3214 9.50607 19.6029 9.71064 19.9287 9.75797L27.2607 10.8234C28.0809 10.9426 28.4084 11.9505 27.8149 12.5291L22.5094 17.7007C22.2737 17.9304 22.1662 18.2614 22.2218 18.5858L23.4743 25.8882C23.6144 26.7051 22.7569 27.3281 22.0233 26.9424L15.4653 23.4946C15.174 23.3415 14.826 23.3415 14.5347 23.4946L7.9767 26.9424C7.24307 27.3281 6.38563 26.7051 6.52574 25.8882L7.7782 18.5858C7.83384 18.2614 7.72629 17.9304 7.49061 17.7007L2.1851 12.5291C1.59159 11.9505 1.91909 10.9426 2.73931 10.8234L10.0713 9.75797C10.3971 9.71064 10.6786 9.50607 10.8243 9.21093L14.1033 2.56698Z"
-                                        fill="#FBBF24" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_13624_2090">
-                                        <rect width="30" height="30" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
-                                fill="none">
-                                <g clip-path="url(#clip0_13624_2090)">
-                                    <path
-                                        d="M14.1033 2.56698C14.4701 1.82374 15.5299 1.82374 15.8967 2.56699L19.1757 9.21093C19.3214 9.50607 19.6029 9.71064 19.9287 9.75797L27.2607 10.8234C28.0809 10.9426 28.4084 11.9505 27.8149 12.5291L22.5094 17.7007C22.2737 17.9304 22.1662 18.2614 22.2218 18.5858L23.4743 25.8882C23.6144 26.7051 22.7569 27.3281 22.0233 26.9424L15.4653 23.4946C15.174 23.3415 14.826 23.3415 14.5347 23.4946L7.9767 26.9424C7.24307 27.3281 6.38563 26.7051 6.52574 25.8882L7.7782 18.5858C7.83384 18.2614 7.72629 17.9304 7.49061 17.7007L2.1851 12.5291C1.59159 11.9505 1.91909 10.9426 2.73931 10.8234L10.0713 9.75797C10.3971 9.71064 10.6786 9.50607 10.8243 9.21093L14.1033 2.56698Z"
-                                        fill="#FBBF24" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_13624_2090">
-                                        <rect width="30" height="30" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
-                                fill="none">
-                                <g clip-path="url(#clip0_13624_2090)">
-                                    <path
-                                        d="M14.1033 2.56698C14.4701 1.82374 15.5299 1.82374 15.8967 2.56699L19.1757 9.21093C19.3214 9.50607 19.6029 9.71064 19.9287 9.75797L27.2607 10.8234C28.0809 10.9426 28.4084 11.9505 27.8149 12.5291L22.5094 17.7007C22.2737 17.9304 22.1662 18.2614 22.2218 18.5858L23.4743 25.8882C23.6144 26.7051 22.7569 27.3281 22.0233 26.9424L15.4653 23.4946C15.174 23.3415 14.826 23.3415 14.5347 23.4946L7.9767 26.9424C7.24307 27.3281 6.38563 26.7051 6.52574 25.8882L7.7782 18.5858C7.83384 18.2614 7.72629 17.9304 7.49061 17.7007L2.1851 12.5291C1.59159 11.9505 1.91909 10.9426 2.73931 10.8234L10.0713 9.75797C10.3971 9.71064 10.6786 9.50607 10.8243 9.21093L14.1033 2.56698Z"
-                                        fill="#FBBF24" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_13624_2090">
-                                        <rect width="30" height="30" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
-                                fill="none">
-                                <g clip-path="url(#clip0_13624_2090)">
-                                    <path
-                                        d="M14.1033 2.56698C14.4701 1.82374 15.5299 1.82374 15.8967 2.56699L19.1757 9.21093C19.3214 9.50607 19.6029 9.71064 19.9287 9.75797L27.2607 10.8234C28.0809 10.9426 28.4084 11.9505 27.8149 12.5291L22.5094 17.7007C22.2737 17.9304 22.1662 18.2614 22.2218 18.5858L23.4743 25.8882C23.6144 26.7051 22.7569 27.3281 22.0233 26.9424L15.4653 23.4946C15.174 23.3415 14.826 23.3415 14.5347 23.4946L7.9767 26.9424C7.24307 27.3281 6.38563 26.7051 6.52574 25.8882L7.7782 18.5858C7.83384 18.2614 7.72629 17.9304 7.49061 17.7007L2.1851 12.5291C1.59159 11.9505 1.91909 10.9426 2.73931 10.8234L10.0713 9.75797C10.3971 9.71064 10.6786 9.50607 10.8243 9.21093L14.1033 2.56698Z"
-                                        fill="#FBBF24" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_13624_2090">
-                                        <rect width="30" height="30" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
-                                fill="none">
-                                <g clip-path="url(#clip0_13624_2090)">
-                                    <path
-                                        d="M14.1033 2.56698C14.4701 1.82374 15.5299 1.82374 15.8967 2.56699L19.1757 9.21093C19.3214 9.50607 19.6029 9.71064 19.9287 9.75797L27.2607 10.8234C28.0809 10.9426 28.4084 11.9505 27.8149 12.5291L22.5094 17.7007C22.2737 17.9304 22.1662 18.2614 22.2218 18.5858L23.4743 25.8882C23.6144 26.7051 22.7569 27.3281 22.0233 26.9424L15.4653 23.4946C15.174 23.3415 14.826 23.3415 14.5347 23.4946L7.9767 26.9424C7.24307 27.3281 6.38563 26.7051 6.52574 25.8882L7.7782 18.5858C7.83384 18.2614 7.72629 17.9304 7.49061 17.7007L2.1851 12.5291C1.59159 11.9505 1.91909 10.9426 2.73931 10.8234L10.0713 9.75797C10.3971 9.71064 10.6786 9.50607 10.8243 9.21093L14.1033 2.56698Z"
-                                        fill="#FBBF24" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_13624_2090">
-                                        <rect width="30" height="30" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </div>
-                        <p class="font-medium text-lg leading-8 text-gray-400 lg:text-center whitespace-nowrap">Nov 01,
-                            2023</p>
-                    </div>
+                        );
+                    })}
                 </div>
-            </div>
+
+                {/* Pagination Controls */}
+                <div className="mt-8 flex gap-4">
+                    <button
+                        onClick={handlePrevPage}
+                        disabled={currentPage === 1}
+                        className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 disabled:opacity-50"
+                    >
+                        Previous
+                    </button>
+                    <button
+                        onClick={handleNextPage}
+                        disabled={currentPage === totalPages}
+                        className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 disabled:opacity-50"
+                    >
+                        Next
+                    </button>
+                </div>
+            </section>
         </div>
-    </section>
-                                            
-      
-    </div>
-  )
+    );
 }
 
-export default ViewReview
+export default ViewReview;
