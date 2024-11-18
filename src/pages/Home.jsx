@@ -21,7 +21,7 @@ function Home() {
           <Body/>
 
 
-
+<h1>This website is under development!</h1>
           <Counter/>
 
           {/* Trailer */}
