@@ -21,10 +21,12 @@ function ViewReview() {
         const unsubscribe = onValue(reviewsRef, (snapshot) => {
             const data = snapshot.val();
             if (data) {
-                const reviewsArray = Object.entries(data).map(([id, value]) => ({
-                    id,
-                    ...value,
-                }));
+                const reviewsArray = Object.entries(data)
+                    .map(([id, value]) => ({
+                        id,
+                        ...value,
+                    }))
+                    .sort((a, b) => b.timestamp - a.timestamp); // Sort by latest reviews first
                 setReviews(reviewsArray);
             } else {
                 setReviews([]);
