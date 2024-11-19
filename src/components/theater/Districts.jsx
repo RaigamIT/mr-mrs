@@ -24,6 +24,7 @@ export default function Districts() {
             <div onClick={theaterlistButton} className="text-center">
               <p className="font-bold">{district.english}</p>
               <p className="text-sm ">{district.sinhala}</p>
+              <p classname="text-bold">{district.id}</p>
             </div>
           </button>
         ))}
