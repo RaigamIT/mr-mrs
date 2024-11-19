@@ -15,7 +15,7 @@ function Cast() {
 <section class="bg-whit">
   <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
       <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
-          <h2 class="mb-4 text-4xl tracking-tight font-bold font-redhat text-gray-900 ">Characters</h2>
+          <h2 class="mb-4 text-4xl tracking-tight font-bold font-redhat text-gray-900 ">Cast</h2>
          
       </div> 
       <div class="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
