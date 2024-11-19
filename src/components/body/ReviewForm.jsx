@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { database } from '../../../firebase.init'; 
 import { ref, push } from "firebase/database"; 
+import Swal from 'sweetalert2'
 
 
 function ReviewForm() {
@@ -28,7 +29,13 @@ function ReviewForm() {
             timestamp: Date.now()
         })
         .then(() => {
-            alert('Review submitted successfully!');
+            // alert('Review submitted successfully!');
+            Swal.fire({
+                title: "Success!",
+                text:name+", Thank You for your "+rating+" Star Rating!",
+                icon: "success",
+                confirmButtonText: "OK",
+              });
             setName(""); // Clear form
             setReview("");
             setRating(0);
@@ -80,6 +87,7 @@ function ReviewForm() {
                         className="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
                         value={review}
                         onChange={(e) => setReview(e.target.value)}
+                        maxLength={200}
                         required
                     />
                 </div>

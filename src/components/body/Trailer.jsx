@@ -9,7 +9,7 @@ function Trailer() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h1 className='mb-10 font-semibold font-serif text-black text-[30px]'>Trailers</h1>
+        <h1 className='mb-10 font-semibold font-redhat text-black text-[30px]'>Trailers</h1>
       </motion.div>
 
       <div className='flex flex-col lg:flex-row gap-6 justify-center'>
