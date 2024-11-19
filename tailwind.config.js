@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        redHat: ['"Red Hat Display"', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
-}
+};

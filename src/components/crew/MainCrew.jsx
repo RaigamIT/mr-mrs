@@ -11,10 +11,10 @@ const fadeInUp = {
 
 export default function MainCrew() {
   return (
-    <div className="mt-[120px] font-serif my-4">
+    <div className="mt-[120px] font-redhat my-4">
       <div className="justify-items-center">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-gray-800 text-4xl font-extrabold">Producer</h2>
+          <h2 className="text-gray-800 text-4xl font-bold">Producer</h2>
         </div>
         <motion.div
           initial="initial"
@@ -32,7 +32,7 @@ export default function MainCrew() {
 
         <div className="max-w-5xl max-lg:max-w-2xl mx-auto">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-gray-800 text-4xl font-extrabold">Main Crew</h2>
+            <h2 className="text-gray-800 text-4xl font-bold">Main Crew</h2>
           </div>
           <motion.div 
             initial="initial"
