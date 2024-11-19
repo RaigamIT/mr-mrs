@@ -16,7 +16,7 @@ function Reviews() {
         <section class="py-24 relative">
             <div class="w-full max-w-7xl px-4 md:px-5 lg:px-6 mx-auto">
                 <div class="">
-                    <h2 class="font-serif font-semibold text-3xl sm:text-4xl leading-10 text-black mb-8 text-center">
+                    <h2 class="font-redhat font-semibold text-3xl sm:text-4xl leading-10 text-black mb-8 text-center">
                         Reviews &
                         Ratings</h2>
                     <div class="grid grid-cols-12 mb-11">
@@ -199,7 +199,7 @@ function Reviews() {
                                                     </defs>
                                                 </svg>
                                             </div>
-                                            <p class="font-serif text-lg leading-8 text-gray-400">46 Ratings</p>
+                                            <p class="font-redhat text-lg leading-8 text-gray-400">46 Ratings</p>
                                         </div>
 
                                         
@@ -208,10 +208,10 @@ function Reviews() {
                                 <div class="col-span-12 md:col-span-4 max-lg:mt-8 md:pl-8">
                                     <div class="flex items-center flex-col justify-center w-full h-full ">
                                         <button onClick={handleClick}
-                                            class="rounded-full px-6 py-4 font-serif bg-[#004A8F] font-semibold text-lg text-white whitespace-nowrap mb-6 w-full text-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-[#FCB81F] hover:text-black hover:shadow-lg">Write
+                                            class="rounded-full px-6 py-4 font-redhat bg-[#004A8F] font-semibold text-lg text-white whitespace-nowrap mb-6 w-full text-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-[#FCB81F] hover:text-black hover:shadow-lg">Write
                                             A Review</button>
                                         <button onClick={navToView}
-                                            class="rounded-full font-serif px-6 py-4 bg-white font-semibold text-lg text-[#004A8F] whitespace-nowrap w-full text-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-[#FCB81F] hover:text-black">See
+                                            class="rounded-full font-redhat px-6 py-4 bg-white font-semibold text-lg text-[#004A8F] whitespace-nowrap w-full text-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-[#FCB81F] hover:text-black">See
                                             All Reviews</button>
                                     </div>
                                 </div>
