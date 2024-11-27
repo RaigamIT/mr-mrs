@@ -7,7 +7,7 @@ import ContactUs from './pages/ContactUs';
 import ReactDOM from "react-dom/client";
 import Theaters from "./pages/Theaters";
 import Winners from "./pages/Winners";
-import AboutUs from './pages/AboutUs';
+import Teams from './pages/AboutUs';
 import ReviewUs from './pages/ReviewUs';
 import WriteReview from './pages/WriteReview';
 import ViewReview from './pages/ViewReview';
@@ -22,7 +22,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="winners" element={< Winners/>} />
           <Route path="theaters" element={<Theaters />} />
-          <Route path="aboutus" element={<AboutUs />} />
+          <Route path="teams" element={<Teams />} />
           <Route path="reviewus" element={<ReviewUs />} />
           <Route path="writereview" element={<WriteReview />} />
           <Route path="viewreview" element={<ViewReview />} />

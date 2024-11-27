@@ -38,7 +38,7 @@ const BackToTop = () => {
           onClick={scrollToTop}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="p-8 rounded-full bg-[#004A8F] text-white shadow-xl hover:shadow-2xl hover:bg-[#FCB81F] hover:text-black transition duration-300"
+          className="p-8 sm:p-4  rounded-full bg-[#004A8F] text-white shadow-xl hover:shadow-2xl hover:bg-[#FCB81F] hover:text-black transition duration-300"
         >
           ↑
         </motion.button>
