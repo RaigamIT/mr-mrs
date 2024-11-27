@@ -86,7 +86,7 @@ const Navbar = () => {
           </motion.div>
           <motion.div initial="hidden" animate="visible" variants={linkVariants}>
             <Link
-              to="/aboutus"
+              to="/teams"
               className="text-[18px] font-redHat font-semibold text-white hover:font-bold hover:text-yellow-400 transition-all duration-200 ease-in-out cursor-pointer"
             >
               Team
@@ -124,7 +124,7 @@ const Navbar = () => {
               Theaters
             </Link>
             <Link
-              to="/aboutus"
+              to="/teams"
               onClick={() => setMenuOpen(false)}
               className="text-[18px] font-redHat font-semibold text-white hover:font-bold hover:text-yellow-400 transition-all duration-200 ease-in-out cursor-pointer py-2"
             >
