@@ -26,7 +26,8 @@ function ReviewForm() {
             name,
             reviewText,
             rating, 
-            timestamp: Date.now()
+            timestamp: Date.now(),
+            isApproved: 0,
         })
         .then(() => {
             // alert('Review submitted successfully!');

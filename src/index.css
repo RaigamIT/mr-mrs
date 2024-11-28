@@ -9,4 +9,14 @@
 html {
     scroll-behavior: smooth;
   }
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on WebKit browsers */
+  }
+  
+.scrollbar-hidden {
+    -ms-overflow-style: none; /* Hide scrollbar on IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar on Firefox */
+  }
+  
   

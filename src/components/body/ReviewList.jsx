@@ -9,6 +9,7 @@ function ViewReview() {
     const maxLength = 50;
     const reviewsPerPage = 5;
 
+    console.log(reviews,"review");
     const toggleText = (id) => {
         setExpandedReviews((prev) => ({
             ...prev,
