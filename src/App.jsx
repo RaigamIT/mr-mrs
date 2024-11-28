@@ -12,22 +12,25 @@ import ReviewUs from './pages/ReviewUs';
 import WriteReview from './pages/WriteReview';
 import ViewReview from './pages/ViewReview';
 import TheaterList from './pages/TheaterList';
+import ScrollToTop from './components/body/ScrollToTop';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-          <Route index element={<Home />} />
-          <Route path="winners" element={< Winners/>} />
-          <Route path="theaters" element={<Theaters />} />
-          <Route path="teams" element={<Teams />} />
-          <Route path="reviewus" element={<ReviewUs />} />
-          <Route path="writereview" element={<WriteReview />} />
-          <Route path="viewreview" element={<ViewReview />} />
-          <Route path="theaterlist" element={<TheaterList/>}/>
-      </Routes>
+      <ScrollToTop/>
+        <Routes>
+            <Route index element={<Home />} />
+            <Route path="winners" element={< Winners/>} />
+            <Route path="theaters" element={<Theaters />} />
+            <Route path="teams" element={<Teams />} />
+            <Route path="reviewus" element={<ReviewUs />} />
+            <Route path="writereview" element={<WriteReview />} />
+            <Route path="viewreview" element={<ViewReview />} />
+            <Route path="theaterlist" element={<TheaterList/>}/>
+        </Routes>
+      
     </BrowserRouter>
   );
 }
