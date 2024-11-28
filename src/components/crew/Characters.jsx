@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Dinakshie from "../../assets/Cast/Dinakshie.png"
+import Dinakshie from "../../assets/Cast/dinakshie.png"
 import Uddika from "../../assets/Cast/Uddika.png"
 import Mahendra from "../../assets/Cast/Mahendra.png"
 import Sarath from "../../assets/Cast/Sarath.png"
