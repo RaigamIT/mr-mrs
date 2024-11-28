@@ -9,7 +9,6 @@ function ViewReview() {
     const maxLength = 50;
     const reviewsPerPage = 5;
 
-    console.log(reviews,"review");
     const toggleText = (id) => {
         setExpandedReviews((prev) => ({
             ...prev,
@@ -27,7 +26,8 @@ function ViewReview() {
                         id,
                         ...value,
                     }))
-                    .sort((a, b) => b.timestamp - a.timestamp); // Sort by latest reviews first
+                    .filter((review) => review.isApproved === 1) 
+                    .sort((a, b) => b.timestamp - a.timestamp); 
                 setReviews(reviewsArray);
             } else {
                 setReviews([]);
@@ -81,7 +81,6 @@ function ViewReview() {
                         const isTextLong = review.reviewText.length > maxLength;
 
                         return (
-                            
                             <div
                                 key={review.id}
                                 className="w-full bg-white shadow-md rounded-lg p-6"

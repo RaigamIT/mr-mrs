@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { database } from '../../../firebase.init'; 
 import { ref, push } from "firebase/database"; 
 import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom';
 
 
 function ReviewForm() {
     const [rating, setRating] = useState(0); 
     const [name, setName] = useState(""); 
     const [review, setReview] = useState(""); 
+
+    const navigate = useNavigate(); // Use navigate for redirection
 
     const handleStarClick = (index) => {
         setRating(index + 1); 
@@ -36,6 +39,10 @@ function ReviewForm() {
                 text:name+", Thank You for your "+rating+" Star Rating!",
                 icon: "success",
                 confirmButtonText: "OK",
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  navigate("/");
+                }
               });
             setName(""); // Clear form
             setReview("");
