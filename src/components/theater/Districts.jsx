@@ -1,13 +1,12 @@
 import React from "react";
 import DistrictList from "../../data/DistrictList.json";
 import { useNavigate } from "react-router";
-
 export default function Districts() {
   const navigate = useNavigate();
 
   function theaterlistButton(id) {
-    alert(`District ID: ${id}`);
-    // You can navigate if needed, e.g., navigate(`/theaterlist/${id}`);
+    navigate(`/list/${id}`);
+      
   }
 
   return (
@@ -20,7 +19,9 @@ export default function Districts() {
       </div>
       <div className="mt-[20px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
         {DistrictList.map((district, index) => (
-          <button
+          <button 
+        
+          
             key={index}
             onClick={() => theaterlistButton(district.id)}
             className="bg-[#004A8F] text-gray-300 font-bold py-3 px-5 rounded-lg shadow-md hover:bg-[#FCB81F] hover:text-black transition duration-300 ease-in-out transform hover:scale-105"
