@@ -123,7 +123,7 @@ function Reviews() {
                         </svg>
                       ))}
                     </div>
-                    <p className="text-sm text-gray-600">{reviews.length} reviews</p>
+                    <p className="text-sm text-gray-600 mb-5">{reviews.length} reviews</p>
                   </div>
                 </div>
               </div>
