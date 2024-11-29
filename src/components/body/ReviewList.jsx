@@ -36,6 +36,8 @@ function ViewReview() {
         return () => unsubscribe();
     }, []);
 
+    console.log(reviews)
+
     // Pagination logic
     const indexOfLastReview = currentPage * reviewsPerPage;
     const indexOfFirstReview = indexOfLastReview - reviewsPerPage;
