@@ -2,6 +2,8 @@ import React from 'react'
 import Navbar from '../components/header/Navbar'
 import ReviewList from '../components/body/ReviewList'
 import Footer from '../components/footer/Footer'
+import BackToTop from '../components/body/BackToTop'
+
 
 function ViewReview() {
   return (
@@ -10,6 +12,8 @@ function ViewReview() {
         <Navbar/>
 
         <ReviewList/>
+
+        <BackToTop/>
 
         <Footer/>
 
