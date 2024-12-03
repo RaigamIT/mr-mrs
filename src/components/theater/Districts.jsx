@@ -10,7 +10,7 @@ export default function Districts() {
   }
 
   return (
-    <div className="mt-[70px] p-4 font-redHat">
+    <div className="mt-[90px] p-4 font-redHat">
       <h1 className="text-3xl font-extrabold mb-6 text-center">District List</h1>
       <div className="mt-[2px]">
         <p className="text-2xl font-semibold mb-6 text-center">
