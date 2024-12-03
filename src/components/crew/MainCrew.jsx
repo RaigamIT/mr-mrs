@@ -11,7 +11,7 @@ const fadeInUp = {
 
 export default function MainCrew() {
   return (
-    <div className="mt-[120px] font-redhat my-4">
+    <div className="mt-[90px] font-redhat my-4">
       <div className="justify-items-center">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-gray-800 text-4xl font-bold">Producer</h2>
